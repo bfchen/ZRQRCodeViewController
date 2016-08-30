@@ -21,7 +21,7 @@ A delightful QR Code Scanning framework that being compatible with iOS 7.0 and l
 $ gem install cocoapods
 ```
 
-> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 2.7.2
+> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 2.7.3
 
 #### podfile
 
@@ -31,7 +31,7 @@ To integrate ZRQRCodeViewController into your Xcode project using Cocoapods, spe
 source 'https://github.com/VictorZhang2014/ZRQRCodeViewController'
 platform :ios, '7.0'  
 
-pod 'ZRQRCodeViewController', '~>2.7.2'
+pod 'ZRQRCodeViewController', '~>2.7.3'
 ```
 Then, run the following command:
 
@@ -136,6 +136,17 @@ qrCode.saveImaegText = savedImageText;
 ```
 
 
+### QR Code Scan by a custom View, There is a sample view name is ZRQRCodeScanView and use of snippet code below. There is a whole code in this project 
+
+```
+//1.You just import this header file
+#import "ZRQRCodeScanView.h"
+
+//2.Easy to call
+[[[ZRQRCodeScanView alloc] init] openQRCodeScan:self];
+```
+
+
 
 
 
@@ -160,7 +171,7 @@ ZRQRCodeViewController是一个非常好用的二维码扫描框架，兼容iOS 
 $ gem install cocoapods
 ```
 
-> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 2.7.2
+> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 2.7.3
 
 #### podfile
 
@@ -170,7 +181,7 @@ $ gem install cocoapods
 source 'https://github.com/VictorZhang2014/ZRQRCodeViewController'
 platform :ios, '7.0'  
 
-pod 'ZRQRCodeViewController', '~>2.7.2'
+pod 'ZRQRCodeViewController', '~>2.7.3'
 ```
 接着，运行以下命令
 
@@ -272,3 +283,12 @@ qrCode.saveImaegText = savedImageText;
 }];
 ```
 
+
+### 二维码扫描可以通过自定View， 这里有一个样例，文件名是ZRQRCodeScanView，以下是使用代码，完整的代码请试运行该项目
+```
+//1.导入头文件
+#import "ZRQRCodeScanView.h"
+
+//2.调用超简单
+[[[ZRQRCodeScanView alloc] init] openQRCodeScan:self];
+```
