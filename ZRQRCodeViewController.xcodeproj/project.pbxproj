@@ -32,17 +32,8 @@
 		57F528B91D29453F00DB8158 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F528B71D29453F00DB8158 /* LaunchScreen.storyboard */; };
 		57F8AF681D30F918007D2F52 /* ZRAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F8AF671D30F918007D2F52 /* ZRAudio.m */; };
 		9021681E1D768D60003778BF /* ZRQRCodeViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902168141D768D5F003778BF /* ZRQRCodeViewController.framework */; };
-		902168251D768D60003778BF /* ZRQRCodeViewController_Carthage_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 902168241D768D60003778BF /* ZRQRCodeViewController_Carthage_Tests.m */; };
 		902168291D768D60003778BF /* ZRQRCodeViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902168141D768D5F003778BF /* ZRQRCodeViewController.framework */; };
 		9021682A1D768D60003778BF /* ZRQRCodeViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 902168141D768D5F003778BF /* ZRQRCodeViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9021684A1D768D91003778BF /* ZRAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = 902168421D768D91003778BF /* ZRAlertController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9021684B1D768D91003778BF /* ZRAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902168431D768D91003778BF /* ZRAlertController.m */; };
-		9021684C1D768D91003778BF /* ZRAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 902168441D768D91003778BF /* ZRAudio.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		9021684D1D768D91003778BF /* ZRAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 902168451D768D91003778BF /* ZRAudio.m */; };
-		9021684E1D768D91003778BF /* ZRQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 902168461D768D91003778BF /* ZRQRCode.bundle */; };
-		9021684F1D768D91003778BF /* ZRQRCodeController.h in Headers */ = {isa = PBXBuildFile; fileRef = 902168471D768D91003778BF /* ZRQRCodeController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		902168501D768D91003778BF /* ZRQRCodeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 902168481D768D91003778BF /* ZRQRCodeViewController.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		902168511D768D91003778BF /* ZRQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902168491D768D91003778BF /* ZRQRCodeViewController.m */; };
 		9554A83182562D4FD5B20B7A /* libPods-ZRQRCodeViewController(Demo).a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B1C336887F663BE0024B0F /* libPods-ZRQRCodeViewController(Demo).a */; };
 /* End PBXBuildFile section */
 
@@ -124,18 +115,7 @@
 		57F8AF671D30F918007D2F52 /* ZRAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRAudio.m; sourceTree = "<group>"; };
 		6429C4792C0DA18377D585E5 /* Pods-ZRQRCodeViewController(Demo).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZRQRCodeViewController(Demo).release.xcconfig"; path = "Pods/Target Support Files/Pods-ZRQRCodeViewController(Demo)/Pods-ZRQRCodeViewController(Demo).release.xcconfig"; sourceTree = "<group>"; };
 		902168141D768D5F003778BF /* ZRQRCodeViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZRQRCodeViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		902168181D768D5F003778BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9021681D1D768D60003778BF /* ZRQRCodeViewController(Carthage)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ZRQRCodeViewController(Carthage)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		902168241D768D60003778BF /* ZRQRCodeViewController_Carthage_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRQRCodeViewController_Carthage_Tests.m; sourceTree = "<group>"; };
-		902168261D768D60003778BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		902168421D768D91003778BF /* ZRAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRAlertController.h; sourceTree = "<group>"; };
-		902168431D768D91003778BF /* ZRAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRAlertController.m; sourceTree = "<group>"; };
-		902168441D768D91003778BF /* ZRAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRAudio.h; sourceTree = "<group>"; };
-		902168451D768D91003778BF /* ZRAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRAudio.m; sourceTree = "<group>"; };
-		902168461D768D91003778BF /* ZRQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZRQRCode.bundle; sourceTree = "<group>"; };
-		902168471D768D91003778BF /* ZRQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRQRCodeController.h; sourceTree = "<group>"; };
-		902168481D768D91003778BF /* ZRQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRQRCodeViewController.h; sourceTree = "<group>"; };
-		902168491D768D91003778BF /* ZRQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRQRCodeViewController.m; sourceTree = "<group>"; };
 		9F0EAA006E8E61895FF90B58 /* libPods-ZRQRCodeViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZRQRCodeViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -191,8 +171,6 @@
 			children = (
 				571936D41D26A966007D5A09 /* ZRQRCodeViewController */,
 				57F528A81D29453F00DB8158 /* ZRQRCodeViewController(Demo) */,
-				902168151D768D5F003778BF /* ZRQRCodeViewController(Carthage) */,
-				902168231D768D60003778BF /* ZRQRCodeViewController(Carthage)Tests */,
 				571936D31D26A966007D5A09 /* Products */,
 				82436521339A79E85067322B /* Pods */,
 				364BD0410ACA29CA0E12A0A9 /* Frameworks */,
@@ -281,31 +259,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		902168151D768D5F003778BF /* ZRQRCodeViewController(Carthage) */ = {
-			isa = PBXGroup;
-			children = (
-				902168421D768D91003778BF /* ZRAlertController.h */,
-				902168431D768D91003778BF /* ZRAlertController.m */,
-				902168441D768D91003778BF /* ZRAudio.h */,
-				902168451D768D91003778BF /* ZRAudio.m */,
-				902168461D768D91003778BF /* ZRQRCode.bundle */,
-				902168471D768D91003778BF /* ZRQRCodeController.h */,
-				902168481D768D91003778BF /* ZRQRCodeViewController.h */,
-				902168491D768D91003778BF /* ZRQRCodeViewController.m */,
-				902168181D768D5F003778BF /* Info.plist */,
-			);
-			path = "ZRQRCodeViewController(Carthage)";
-			sourceTree = "<group>";
-		};
-		902168231D768D60003778BF /* ZRQRCodeViewController(Carthage)Tests */ = {
-			isa = PBXGroup;
-			children = (
-				902168241D768D60003778BF /* ZRQRCodeViewController_Carthage_Tests.m */,
-				902168261D768D60003778BF /* Info.plist */,
-			);
-			path = "ZRQRCodeViewController(Carthage)Tests";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -313,10 +266,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9021684A1D768D91003778BF /* ZRAlertController.h in Headers */,
-				9021684F1D768D91003778BF /* ZRQRCodeController.h in Headers */,
-				9021684C1D768D91003778BF /* ZRAudio.h in Headers */,
-				902168501D768D91003778BF /* ZRQRCodeViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +422,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9021684E1D768D91003778BF /* ZRQRCode.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,9 +561,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9021684D1D768D91003778BF /* ZRAudio.m in Sources */,
-				902168511D768D91003778BF /* ZRQRCodeViewController.m in Sources */,
-				9021684B1D768D91003778BF /* ZRAlertController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,7 +568,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				902168251D768D60003778BF /* ZRQRCodeViewController_Carthage_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
