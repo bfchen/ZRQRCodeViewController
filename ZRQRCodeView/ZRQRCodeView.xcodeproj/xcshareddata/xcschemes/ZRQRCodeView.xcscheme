@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "902168131D768D5F003778BF"
-               BuildableName = "ZRQRCodeViewController.framework"
-               BlueprintName = "ZRQRCodeViewController(Carthage)"
-               ReferencedContainer = "container:ZRQRCodeViewController.xcodeproj">
+               BlueprintIdentifier = "904C668E1D76B77E00E68495"
+               BuildableName = "ZRQRCodeView.framework"
+               BlueprintName = "ZRQRCodeView"
+               ReferencedContainer = "container:ZRQRCodeView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "902168131D768D5F003778BF"
-            BuildableName = "ZRQRCodeViewController.framework"
-            BlueprintName = "ZRQRCodeViewController(Carthage)"
-            ReferencedContainer = "container:ZRQRCodeViewController.xcodeproj">
+            BlueprintIdentifier = "904C668E1D76B77E00E68495"
+            BuildableName = "ZRQRCodeView.framework"
+            BlueprintName = "ZRQRCodeView"
+            ReferencedContainer = "container:ZRQRCodeView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "902168131D768D5F003778BF"
-            BuildableName = "ZRQRCodeViewController.framework"
-            BlueprintName = "ZRQRCodeViewController(Carthage)"
-            ReferencedContainer = "container:ZRQRCodeViewController.xcodeproj">
+            BlueprintIdentifier = "904C668E1D76B77E00E68495"
+            BuildableName = "ZRQRCodeView.framework"
+            BlueprintName = "ZRQRCodeView"
+            ReferencedContainer = "container:ZRQRCodeView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
