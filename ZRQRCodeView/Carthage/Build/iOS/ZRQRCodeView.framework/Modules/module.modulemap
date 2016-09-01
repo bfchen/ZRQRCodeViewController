@@ -1,6 +1,0 @@
-framework module ZRQRCodeView {
-  umbrella header "ZRQRCodeView.h"
-
-  export *
-  module * { export * }
-}
