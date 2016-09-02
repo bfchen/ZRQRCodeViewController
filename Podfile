@@ -7,6 +7,6 @@ target 'ZRQRCodeViewController' do
 end
 
 target 'ZRQRCodeViewController(Demo)' do
-    pod 'ZRQRCodeViewController', '~>2.7.3'
+    pod 'ZRQRCodeViewController', '~>2.7.5'
 end
 

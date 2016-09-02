@@ -187,6 +187,16 @@ static MyActionSheetCompletion actionSheetCompletion;
     [self bindLongPressGesture:viewController Object:object];
 }
 
+- (BOOL)canRecognize:(UIImage *)image
+{
+    BOOL canRec = false;
+    NSArray *features = [self.detector featuresInImage:[CIImage imageWithCGImage:image.CGImage]];
+    if (features.count >= 1) {
+        canRec = true;
+    }
+    return canRec;
+}
+
 - (void)setActionSheets:(NSArray *)actionSheets
 {
     _actionSheets = actionSheets;
