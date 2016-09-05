@@ -74,7 +74,7 @@ typedef NS_ENUM(NSInteger) {
 /*
  * Detect @image can or can not recoginize
  **/
-- (BOOL)canRecognize:(UIImage *)image;
+- (NSString *)canRecognize:(UIImage *)image;
 
 @end
 

@@ -187,14 +187,15 @@ static MyActionSheetCompletion actionSheetCompletion;
     [self bindLongPressGesture:viewController Object:object];
 }
 
-- (BOOL)canRecognize:(UIImage *)image
+- (NSString *)canRecognize:(UIImage *)image
 {
-    BOOL canRec = false;
+    NSString *result = [[NSString alloc] init];
     NSArray *features = [self.detector featuresInImage:[CIImage imageWithCGImage:image.CGImage]];
     if (features.count >= 1) {
-        canRec = true;
+        CIQRCodeFeature *feature = [features objectAtIndex:0];
+        result = feature.messageString;
     }
-    return canRec;
+    return result;
 }
 
 - (void)setActionSheets:(NSArray *)actionSheets
