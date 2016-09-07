@@ -30,6 +30,8 @@ typedef void(^ActionBlock)(int index, NSString *item);
 
 @interface ZRAlertController : NSObject
 
+@property (nonatomic, strong) UIViewController *ownViewController;
+
 + (instancetype)defaultAlert;
 
 
