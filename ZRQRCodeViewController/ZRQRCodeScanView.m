@@ -42,6 +42,8 @@
         [[ZRAlertController defaultAlert] alertShow:wself.lastViewController title:@"QRCode Result" message:[NSString stringWithFormat:@"QRCode Result：%@", strValue] okayButton:@"OK" completion:^{
             
         }];
+    } failure:^(NSString *message) {
+        NSLog(@"Error Message = %@", message);
     }];
     [self addSomeView:qrCode.view.frame];
     [self showTabbar];

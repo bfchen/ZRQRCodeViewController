@@ -12,8 +12,9 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^MyBlockCompletion)(NSString * strValue);
-typedef void(^MyActionSheetCompletion)(int index, NSString * value);
+typedef void(^ MyBlockCompletion)(NSString * strValue);
+typedef void(^ MyActionSheetCompletion)(int index, NSString * value);
+typedef void(^ MyBlockFailure )(NSString * message);
 
 typedef NS_ENUM(NSInteger) {
     ZRQRCodeScanTypeReturn       = 0, // Return a result after scanned and dismiss current controller
@@ -30,14 +31,16 @@ typedef NS_ENUM(NSInteger) {
 
 @property (nonatomic, assign) BOOL enabledLight;
 @property (nonatomic, strong) UIColor *VCTintColor;
-- (instancetype)initWithScanType:(ZRQRCodeScanType)scanType customView:(UIView *)customView navigationBarTitle:(NSString *)title;
+- (instancetype)initWithScanType:(ZRQRCodeScanType)scanType customView:(UIView *)customView navigationBarTitle:(NSString *)title NS_AVAILABLE_IOS(7_0);
+
+@property (nonatomic, copy) NSString *errorMessage;
 
 /*
  * QR Code Scanning immediately
  * @param viewController , is current controller
  * @param completion , it is a callback block with a NSString parameter
  **/
-- (void)QRCodeScanningWithViewController:(UIViewController *)viewController completion:(MyBlockCompletion)completion;
+- (void)QRCodeScanningWithViewController:(UIViewController *)viewController completion:(MyBlockCompletion)completion failure:(MyBlockFailure)failure NS_AVAILABLE_IOS(7_0);
 
 
 @property (nonatomic, copy) NSString *textWhenNotRecognized;
@@ -46,7 +49,7 @@ typedef NS_ENUM(NSInteger) {
  * @param viewController , is current controller
  * @param completion , it is a callback block with a NSString parameter
  **/
-- (void)recognizationByPhotoLibraryViewController:(UIViewController *)viewController completion:(MyBlockCompletion)completion;
+- (void)recognizationByPhotoLibraryViewController:(UIViewController *)viewController completion:(MyBlockCompletion)completion failure:(MyBlockFailure)failure NS_AVAILABLE_IOS(8_0);
 
 
 
@@ -59,7 +62,7 @@ typedef NS_ENUM(NSInteger) {
  * @param viewController , is current controller
  * @param object , it is an object that show an image on any types of object , in which is a two dimensional code picture
  **/
-- (void)extractQRCodeByLongPressViewController:(UIViewController *)viewController Object:(id)object completion:(MyBlockCompletion)completion;
+- (void)extractQRCodeByLongPressViewController:(UIViewController *)viewController Object:(id)object completion:(MyBlockCompletion)completion failure:(MyBlockFailure)failure NS_AVAILABLE_IOS(8_0);
 
 /*
  * Extract QR Code by Long press object , which maybe is UIImageView, UIButton, UIWebView, WKWebView, UIView, UIViewController , all of them , but that's okay for this method to extract.
@@ -68,13 +71,13 @@ typedef NS_ENUM(NSInteger) {
  * @param actionSheetsCompletion, is a completion block for action sheet
  * @param object , it is an object that show an image on any type of object , in which is a two dimensional code picture
  **/
-- (void)extractQRCodeByLongPressViewController:(UIViewController *)viewController Object:(id)object actionSheetCompletion:(MyActionSheetCompletion)actionSheetsCompletion completion:(MyBlockCompletion)completion;
+- (void)extractQRCodeByLongPressViewController:(UIViewController *)viewController Object:(id)object actionSheetCompletion:(MyActionSheetCompletion)actionSheetsCompletion completion:(MyBlockCompletion)completion failure:(MyBlockFailure)failure NS_AVAILABLE_IOS(8_0);
 
 
 /*
  * Detect @image can or can not recoginize
  **/
-- (NSString *)canRecognize:(UIImage *)image;
+- (NSString *)canRecognize:(UIImage *)image NS_AVAILABLE_IOS(8_0);
 
 @end
 

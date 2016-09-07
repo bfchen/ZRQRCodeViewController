@@ -57,7 +57,7 @@ typedef NS_ENUM(NSInteger) {
 /*
  * Extract QR Code by Long press object , which maybe is UIImageView, UIButton, UIWebView, WKWebView, UIView , all of them , but that's okay for this method to extract.
  * @param viewController , is current controller
- * @param object , it is an object that show an image on any type of object , in which is a two dimensional code picture
+ * @param object , it is an object that show an image on any types of object , in which is a two dimensional code picture
  **/
 - (void)extractQRCodeByLongPressViewController:(UIViewController *)viewController Object:(id)object completion:(MyBlockCompletion)completion;
 
@@ -69,6 +69,12 @@ typedef NS_ENUM(NSInteger) {
  * @param object , it is an object that show an image on any type of object , in which is a two dimensional code picture
  **/
 - (void)extractQRCodeByLongPressViewController:(UIViewController *)viewController Object:(id)object actionSheetCompletion:(MyActionSheetCompletion)actionSheetsCompletion completion:(MyBlockCompletion)completion;
+
+
+/*
+ * Detect @image can or can not recoginize
+ **/
+- (NSString *)canRecognize:(UIImage *)image;
 
 @end
 

@@ -70,12 +70,16 @@
                 [alertView show];
             }
         }];
+    } failure:^(NSString *message) {
+       [[ZRAlertController defaultAlert] alertShowWithTitle:@"Note" message:message okayButton:@"Ok" completion:^{ }];
+        NSLog(@"Error Message = %@", message);
     }];
 }
 
 - (IBAction)scanningQRCode1:(UIButton *)sender {
     ZRQRCodeViewController *qrCode = [[ZRQRCodeViewController alloc] initWithScanType:ZRQRCodeScanTypeReturn];
     qrCode.qrCodeNavigationTitle = @"QR Code Scanning";
+    qrCode.errorMessage = @"Access Denied";
     [qrCode QRCodeScanningWithViewController:self completion:^(NSString *strValue) {
         NSLog(@"strValue = %@ ", strValue);
         if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:strValue]]){
@@ -84,6 +88,9 @@
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ooooops!" message:[NSString stringWithFormat:@"The result is %@", strValue] delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
             [alertView show];
         }
+    } failure:^(NSString *message) {
+        [[ZRAlertController defaultAlert] alertShowWithTitle:@"Note" message:message okayButton:@"Ok" completion:^{ }];
+        NSLog(@"Error Message = %@", message);
     }];
 }
 
@@ -97,6 +104,9 @@
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ooooops!" message:[NSString stringWithFormat:@"The result is %@", strValue] delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
             [alertView show];
         }
+    } failure:^(NSString *message) {
+        [[ZRAlertController defaultAlert] alertShowWithTitle:@"Note" message:message okayButton:@"Ok" completion:^{ }];
+        NSLog(@"Error Message = %@", message);
     }];
 }
 
@@ -114,6 +124,9 @@
                 [alertView show];
             }
         }];
+    } failure:^(NSString *message) {
+        [[ZRAlertController defaultAlert] alertShowWithTitle:@"Note" message:message okayButton:@"Ok" completion:^{ }];
+        NSLog(@"Error Message = %@", message);
     }];
 }
 

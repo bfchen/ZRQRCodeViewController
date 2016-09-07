@@ -9,46 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZRQRCodeViewController/ZRQRCodeViewController.m"
-            timestampString = "494906272.751583"
+            filePath = "ZRQRCodeViewController/ZXingObjC/pdf417/decoder/ZXPDF417DetectionResult.m"
+            timestampString = "494906995.226345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "340"
-            endingLineNumber = "340"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-adjustRowNumbersByRow"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.177"
-                  moduleName = "ZRQRCodeViewController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/VictorZhang/Documents/iOS/Projects/ZRQRCodeViewController/ZRQRCodeViewController/ZRQRCodeViewController.m"
-                  timestampString = "494906341.288022"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "340"
-                  endingLineNumber = "340"
-                  offsetFromSymbolStart = "51">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.178"
-                  moduleName = "ZRQRCodeViewController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/VictorZhang/Documents/iOS/Projects/ZRQRCodeViewController/ZRQRCodeViewController/ZRQRCodeViewController.m"
-                  timestampString = "494906341.288196"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "340"
-                  endingLineNumber = "340"
-                  offsetFromSymbolStart = "29">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -57,13 +25,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZRQRCodeViewController/ZXingObjC/pdf417/decoder/ZXPDF417DetectionResult.m"
-            timestampString = "494906995.226345"
+            filePath = "ZRQRCodeViewController/ZRQRCodeViewController.m"
+            timestampString = "494926807.648456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "-adjustRowNumbersByRow"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZRQRCodeViewController/ZRQRCodeViewController.m"
+            timestampString = "494926845.970877"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
+            landmarkName = "-canAccessCamera"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZRQRCodeViewController/ZRQRCodeViewController.m"
+            timestampString = "494926895.312461"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "354"
+            endingLineNumber = "354"
+            landmarkName = "-canAccessPhotos"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

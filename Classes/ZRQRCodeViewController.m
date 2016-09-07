@@ -12,12 +12,21 @@
 
 #import "ZRQRCodeViewController.h"
 #import "ZRQRCodeController.h"
+#import <Photos/Photos.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 static MyBlockCompletion recognizeCompletion;
 static MyActionSheetCompletion actionSheetCompletion;
 
 #define ScanMenuHeight 45
 #define ABOVEiOS8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
+#define ABOVEiOS9 [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0
+
+typedef NS_ENUM(NSInteger)
+{
+    ZRQRCodeExtractTypeFromPhotoLibrary,
+    ZRQRCodeExtractTypeByScanning
+}ZRQRCodeExtractType;
 
 @interface ZRQRCodeViewController ()<AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
@@ -39,9 +48,20 @@ static MyActionSheetCompletion actionSheetCompletion;
 @property (nonatomic, strong) UIViewController *lastController;//The last controller
 
 @property (nonatomic, strong) ZRCustomBundle *customBundle;
+
+@property (nonatomic, copy) MyBlockFailure blockFailure;
+@property (nonatomic, assign) ZRQRCodeExtractType codeExtractType;
 @end
 
 @implementation ZRQRCodeViewController
+
+- (NSString *)errorMessage
+{
+    if (!_errorMessage) {
+        _errorMessage = @"Access Denied. To access iPhone's Photos/Camera ,please authorize in Settings. ";
+    }
+    return _errorMessage;
+}
 
 - (ZRCustomBundle *)customBundle
 {
@@ -102,7 +122,7 @@ static MyActionSheetCompletion actionSheetCompletion;
 /*
  * QR Code Scanning immediately
  **/
-- (void)QRCodeScanningWithViewController:(UIViewController *)viewController completion:(MyBlockCompletion)completion
+- (void)QRCodeScanningWithViewController:(UIViewController *)viewController completion:(MyBlockCompletion)completion failure:(MyBlockFailure)failure
 {
     if (!viewController) {
         NSLog(@"Parameter viewController can not nil!");
@@ -113,6 +133,11 @@ static MyActionSheetCompletion actionSheetCompletion;
         recognizeCompletion = completion;
     }
 
+    if (failure) {
+        self.blockFailure = failure;
+        self.codeExtractType = ZRQRCodeExtractTypeByScanning;
+    }
+    
     if (self.customView) {
         [self pushController:viewController];
     } else {
@@ -123,7 +148,7 @@ static MyActionSheetCompletion actionSheetCompletion;
 /*
  * Recogize a QR Code picture through the Photo Library
  **/
-- (void)recognizationByPhotoLibraryViewController:(UIViewController *)viewController completion:(MyBlockCompletion)completion
+- (void)recognizationByPhotoLibraryViewController:(UIViewController *)viewController completion:(MyBlockCompletion)completion failure:(MyBlockFailure)failure
 {
     if (!viewController) {
         NSLog(@"Parameter viewController can not nil!");
@@ -132,6 +157,11 @@ static MyActionSheetCompletion actionSheetCompletion;
     
     if (completion) {
         recognizeCompletion = completion;
+    }
+    
+    if (failure) {
+        self.blockFailure = failure;
+        self.codeExtractType = ZRQRCodeExtractTypeFromPhotoLibrary;
     }
     
     [viewController addChildViewController:self];
@@ -145,7 +175,7 @@ static MyActionSheetCompletion actionSheetCompletion;
 /*
  * Extract QR Code by Long press object , which maybe is UIImageView, UIButton, UIWebView, WKWebView, UIView, UIViewController , all of them , but that's okay for this method to extract.
  **/
-- (void)extractQRCodeByLongPressViewController:(UIViewController *)viewController Object:(id)object completion:(MyBlockCompletion)completion
+- (void)extractQRCodeByLongPressViewController:(UIViewController *)viewController Object:(id)object completion:(MyBlockCompletion)completion failure:(MyBlockFailure)failure
 {
     if (!viewController) {
         NSLog(@"Parameter viewController can not nil!");
@@ -155,6 +185,11 @@ static MyActionSheetCompletion actionSheetCompletion;
     if (!object) {
         NSLog(@"Parameter object can not nil!");
         return;
+    }
+    
+    if (failure) {
+        self.blockFailure = failure;
+        self.codeExtractType = ZRQRCodeExtractTypeFromPhotoLibrary;
     }
     
     if (completion) {
@@ -164,7 +199,7 @@ static MyActionSheetCompletion actionSheetCompletion;
     [self bindLongPressGesture:viewController Object:object];
 }
 
-- (void)extractQRCodeByLongPressViewController:(UIViewController *)viewController Object:(id)object actionSheetCompletion:(MyActionSheetCompletion)actionSheetsCompletion completion:(MyBlockCompletion)completion
+- (void)extractQRCodeByLongPressViewController:(UIViewController *)viewController Object:(id)object actionSheetCompletion:(MyActionSheetCompletion)actionSheetsCompletion completion:(MyBlockCompletion)completion failure:(MyBlockFailure)failure
 {
     if (!viewController) {
         NSLog(@"Parameter viewController can not nil!");
@@ -178,6 +213,11 @@ static MyActionSheetCompletion actionSheetCompletion;
     
     if (completion) {
         recognizeCompletion = completion;
+    }
+    
+    if (failure) {
+        self.blockFailure = failure;
+        self.codeExtractType = ZRQRCodeExtractTypeFromPhotoLibrary;
     }
     
     if (actionSheetsCompletion) {
@@ -300,8 +340,52 @@ static MyActionSheetCompletion actionSheetCompletion;
     }];
 }
 
+- (BOOL)canAccessCamera
+{
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied){
+        return NO;
+    }
+    return YES;
+}
+
+- (BOOL)canAccessPhotos
+{
+    if (ABOVEiOS8) {
+        PHAuthorizationStatus auth = [PHPhotoLibrary authorizationStatus];
+        if(auth == PHAuthorizationStatusDenied || auth == PHAuthorizationStatusRestricted){
+            return NO;
+        }
+    } else {
+        ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
+        if (authStatus == ALAuthorizationStatusDenied || authStatus == ALAuthorizationStatusRestricted) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //Determine the authorization
+    if (self.codeExtractType == ZRQRCodeExtractTypeFromPhotoLibrary) {
+        if (![self canAccessPhotos]) {
+            if (self.blockFailure) {
+                self.blockFailure(self.errorMessage);
+            }
+            [self dismissController];
+            return;
+        }
+    } else if (self.codeExtractType == ZRQRCodeExtractTypeByScanning) {
+        if (![self canAccessCamera]) {
+            if (self.blockFailure) {
+                self.blockFailure(self.errorMessage);
+            }
+            [self dismissController];
+            return;
+        }
+    }
     
     _playSound = [[ZRAudio alloc] init];
     
