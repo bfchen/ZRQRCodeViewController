@@ -43,6 +43,7 @@
             
         }];
     } failure:^(NSString *message) {
+        [[ZRAlertController defaultAlert] alertShowWithTitle:@"Note" message:message okayButton:@"Ok" completion:^{ }];
         NSLog(@"Error Message = %@", message);
     }];
     [self addSomeView:qrCode.view.frame];

@@ -61,6 +61,9 @@
                 [alertView show];
             }
         }];
+    } failure:^(NSString *message) {
+        [[ZRAlertController defaultAlert] alertShowWithTitle:@"Note" message:message okayButton:@"Ok" completion:^{ }];
+        NSLog(@"Error Message = %@", message);
     }];
 }
 
@@ -76,6 +79,9 @@
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ooooops!" message:[NSString stringWithFormat:@"The result is %@", strValue] delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
             [alertView show];
         }
+    } failure:^(NSString *message) {
+        [[ZRAlertController defaultAlert] alertShowWithTitle:@"Note" message:message okayButton:@"Ok" completion:^{ }];
+        NSLog(@"Error Message = %@", message);
     }];
     
 }
@@ -91,6 +97,9 @@
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ooooops!" message:[NSString stringWithFormat:@"The result is %@", strValue] delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
             [alertView show];
         }
+    } failure:^(NSString *message) {
+        [[ZRAlertController defaultAlert] alertShowWithTitle:@"Note" message:message okayButton:@"Ok" completion:^{ }];
+        NSLog(@"Error Message = %@", message);
     }];
 
     
@@ -109,6 +118,9 @@
                 [alertView show];
             }
         }];
+    } failure:^(NSString *message) {
+        [[ZRAlertController defaultAlert] alertShowWithTitle:@"Note" message:message okayButton:@"Ok" completion:^{ }];
+        NSLog(@"Error Message = %@", message);
     }];
     
 }
