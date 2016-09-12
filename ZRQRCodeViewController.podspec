@@ -14,5 +14,5 @@ spec.public_header_files   = 'Classes/*.{h}'
 spec.source_files          = 'Classes/*.{h,m}'
 spec.resource              = 'Classes/ZRQRCode.bundle'
 spec.frameworks            = 'UIKit', 'WebKit','AVFoundation','AudioToolbox','Photos','AssetsLibrary'
-spec.dependency            = 'ZRAlertController'
+
 end

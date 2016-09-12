@@ -16,7 +16,6 @@
 #ifndef _ZRQRCodeController_
     #define _ZRQRCodeController_
 
-    #import "ZRAlertController.h"
     #import "ZRQRCodeViewController.h"
     #import "ZRAudio.h"
 
