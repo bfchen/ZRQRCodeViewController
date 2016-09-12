@@ -29,6 +29,9 @@
 		57F528B61D29453F00DB8158 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F528B51D29453F00DB8158 /* Assets.xcassets */; };
 		57F528B91D29453F00DB8158 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F528B71D29453F00DB8158 /* LaunchScreen.storyboard */; };
 		57F8AF681D30F918007D2F52 /* ZRAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F8AF671D30F918007D2F52 /* ZRAudio.m */; };
+		9032C6E01D865AF00067A92D /* ZRMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6DF1D865AF00067A92D /* ZRMainViewController.m */; };
+		9032C6E31D868D440067A92D /* ZRGeneratedQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6E21D868D440067A92D /* ZRGeneratedQRCodeViewController.m */; };
+		9032C6E81D86A1020067A92D /* ZRQRGenerateCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6E71D86A1020067A92D /* ZRQRGenerateCode.m */; };
 		90BAF9D61D7FB1CA006278BB /* ZRAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF9D51D7FB1CA006278BB /* ZRAlertController.m */; };
 		9554A83182562D4FD5B20B7A /* libPods-ZRQRCodeViewController(Demo).a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B1C336887F663BE0024B0F /* libPods-ZRQRCodeViewController(Demo).a */; };
 /* End PBXBuildFile section */
@@ -83,6 +86,12 @@
 		57F8AF661D30F918007D2F52 /* ZRAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRAudio.h; sourceTree = "<group>"; };
 		57F8AF671D30F918007D2F52 /* ZRAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRAudio.m; sourceTree = "<group>"; };
 		6429C4792C0DA18377D585E5 /* Pods-ZRQRCodeViewController(Demo).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZRQRCodeViewController(Demo).release.xcconfig"; path = "Pods/Target Support Files/Pods-ZRQRCodeViewController(Demo)/Pods-ZRQRCodeViewController(Demo).release.xcconfig"; sourceTree = "<group>"; };
+		9032C6DE1D865AF00067A92D /* ZRMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRMainViewController.h; sourceTree = "<group>"; };
+		9032C6DF1D865AF00067A92D /* ZRMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRMainViewController.m; sourceTree = "<group>"; };
+		9032C6E11D868D440067A92D /* ZRGeneratedQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRGeneratedQRCodeViewController.h; sourceTree = "<group>"; };
+		9032C6E21D868D440067A92D /* ZRGeneratedQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRGeneratedQRCodeViewController.m; sourceTree = "<group>"; };
+		9032C6E61D86A1020067A92D /* ZRQRGenerateCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRQRGenerateCode.h; sourceTree = "<group>"; };
+		9032C6E71D86A1020067A92D /* ZRQRGenerateCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRQRGenerateCode.m; sourceTree = "<group>"; };
 		90BAF9D41D7FB1CA006278BB /* ZRAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRAlertController.h; sourceTree = "<group>"; };
 		90BAF9D51D7FB1CA006278BB /* ZRAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRAlertController.m; sourceTree = "<group>"; };
 		9F0EAA006E8E61895FF90B58 /* libPods-ZRQRCodeViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZRQRCodeViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +154,8 @@
 				57E7D2491D35063B008A6FE2 /* ZRQRCode.bundle */,
 				571936D81D26A966007D5A09 /* AppDelegate.h */,
 				571936D91D26A966007D5A09 /* AppDelegate.m */,
+				9032C6DE1D865AF00067A92D /* ZRMainViewController.h */,
+				9032C6DF1D865AF00067A92D /* ZRMainViewController.m */,
 				571936DB1D26A966007D5A09 /* ViewController.h */,
 				571936DC1D26A966007D5A09 /* ViewController.m */,
 				577440191D599CB400293E80 /* ZRQRCodeScanView.h */,
@@ -153,11 +164,15 @@
 				90BAF9D51D7FB1CA006278BB /* ZRAlertController.m */,
 				571936EC1D26A996007D5A09 /* ZRQRCodeViewController.h */,
 				571936ED1D26A996007D5A09 /* ZRQRCodeViewController.m */,
+				9032C6E61D86A1020067A92D /* ZRQRGenerateCode.h */,
+				9032C6E71D86A1020067A92D /* ZRQRGenerateCode.m */,
 				57F8AF661D30F918007D2F52 /* ZRAudio.h */,
 				57F8AF671D30F918007D2F52 /* ZRAudio.m */,
 				57E7D2481D35029A008A6FE2 /* ZRQRCodeController.h */,
 				5716B7901D37816D00731869 /* ZRTmpViewController.h */,
 				5716B7911D37816D00731869 /* ZRTmpViewController.m */,
+				9032C6E11D868D440067A92D /* ZRGeneratedQRCodeViewController.h */,
+				9032C6E21D868D440067A92D /* ZRGeneratedQRCodeViewController.m */,
 				571936DE1D26A966007D5A09 /* Main.storyboard */,
 				571936E11D26A966007D5A09 /* Assets.xcassets */,
 				571936E31D26A966007D5A09 /* LaunchScreen.storyboard */,
@@ -412,15 +427,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9032C6E31D868D440067A92D /* ZRGeneratedQRCodeViewController.m in Sources */,
 				57A8CDF81D3F73A400A3DA5E /* ZRQRCodeViewController.h in Sources */,
 				5774401B1D599CB400293E80 /* ZRQRCodeScanView.m in Sources */,
 				57A8CDFA1D3F73A400A3DA5E /* ZRAudio.h in Sources */,
 				90BAF9D61D7FB1CA006278BB /* ZRAlertController.m in Sources */,
 				57338DF91D3F70690024F0F3 /* ZRQRCodeController.h in Sources */,
+				9032C6E81D86A1020067A92D /* ZRQRGenerateCode.m in Sources */,
 				57F8AF681D30F918007D2F52 /* ZRAudio.m in Sources */,
 				571936EE1D26A996007D5A09 /* ZRQRCodeViewController.m in Sources */,
 				5716B7921D37816D00731869 /* ZRTmpViewController.m in Sources */,
 				571936DD1D26A966007D5A09 /* ViewController.m in Sources */,
+				9032C6E01D865AF00067A92D /* ZRMainViewController.m in Sources */,
 				571936DA1D26A966007D5A09 /* AppDelegate.m in Sources */,
 				571936D71D26A966007D5A09 /* main.m in Sources */,
 			);

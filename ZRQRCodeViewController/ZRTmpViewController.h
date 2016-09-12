@@ -10,4 +10,6 @@
 
 @interface ZRTmpViewController : UIViewController
 
+@property (nonatomic, assign) int type;
+
 @end

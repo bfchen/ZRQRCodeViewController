@@ -14,6 +14,7 @@
 #import "ZRQRCodeController.h"
 #import <Photos/Photos.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "ZRQRGenerateCode.h"
 
 static MyBlockCompletion recognizeCompletion;
 static MyActionSheetCompletion actionSheetCompletion;
@@ -796,6 +797,24 @@ typedef NS_ENUM(NSInteger)
 {
     return UIInterfaceOrientationPortrait;
 }
+
+
+- (UIImageView *)generateQuickResponseCodeWithFrame:(CGRect)imageRect dataString:(NSString *)dataString
+{
+    return [[[ZRQRGenerateCode alloc] init] generateQuickResponseCodeWithFrame:imageRect dataString:dataString];
+}
+
+
+- (UIImageView *)generateQuickResponseCodeWithFrame:(CGRect)imageRect dataString:(NSString *)dataString centerImage:(UIImage *)image
+{
+   return [[[ZRQRGenerateCode alloc] init] generateQuickResponseCodeWithFrame:imageRect dataString:dataString centerImage:image];
+}
+
+- (UIImageView *)generateQuickResponseCodeWithFrame:(CGRect)imageRect dataString:(NSString *)dataString centerImage:(UIImage *)image needShadow:(BOOL)shadow
+{
+   return [[[ZRQRGenerateCode alloc] init] generateQuickResponseCodeWithFrame:imageRect dataString:dataString centerImage:image needShadow:YES];
+}
+
 
 @end
 

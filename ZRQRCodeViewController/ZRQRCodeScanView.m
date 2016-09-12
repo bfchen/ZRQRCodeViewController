@@ -92,7 +92,7 @@
 {
     CGFloat length = 27;
     CGRect sfRect = _scanFrame.frame;
-    CGFloat blue[4] = { (float)50 / 255, (float)205 / 255, (float)50 / 255, 1 };
+    CGFloat color[4] = { (float)69 / 255, (float)177 / 255, (float)249 / 255, 1 };
     CGFloat white[4] = { (float)255 / 255, (float)255 / 255, (float)255 / 255, 1 };
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -122,7 +122,7 @@
     CGContextAddLineToPoint(ctx, sfRect.origin.x + length, sfRect.origin.y);
     CGContextStrokePath(ctx);
     
-    CGContextSetStrokeColor(ctx, blue);
+    CGContextSetStrokeColor(ctx, color);
     CGContextSetLineWidth(ctx, 6);
     
     //左上角
