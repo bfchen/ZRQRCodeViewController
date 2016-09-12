@@ -1,6 +1,6 @@
 
 # ZRQRCodeViewController
-A delightful QR Code Scanning framework that being compatible with iOS 7.0 and later. It has strongly precision to scan QR Code. It can scan QR Code and Bar Code.
+A delightful QR Code Scanning framework that is compatible with iOS 7.0 and later. It has strongly precision to scan QR Code. It can scan QR Code and Bar Code.
 
 ### 滚动到最下面有中文说明
 ### CSDN博文
@@ -21,7 +21,7 @@ A delightful QR Code Scanning framework that being compatible with iOS 7.0 and l
 $ gem install cocoapods
 ```
 
-> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 2.8
+> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 3.1
 
 #### podfile
 
@@ -31,7 +31,7 @@ To integrate ZRQRCodeViewController into your Xcode project using Cocoapods, spe
 source 'https://github.com/VictorZhang2014/ZRQRCodeViewController'
 platform :ios, '7.0'  
 
-pod 'ZRQRCodeViewController', '~>2.8'
+pod 'ZRQRCodeViewController', '~>3.1'
 ```
 Then, run the following command:
 
@@ -148,6 +148,36 @@ qrCode.saveImaegText = savedImageText;
 
 
 
+### Generate QR Code as a picture
+```
+//Indicate UIImageView rect
+CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20);
+
+//And then returns a UIImageView which is QRCode picture with rect through indicating data string
+UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com"];
+```
+
+### Generate QR Code as a picture amidst a center icon 
+```
+//Indicate UIImageView rect
+CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20);
+
+//And then returns a UIImageView which is QRCode picture with rect through indicating data string and amidst a icon
+UIImage *center = [UIImage imageNamed:@"centericon"];
+UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center];
+```
+
+### Generate QR Code as a picture amidst a center icon and has shadow effect
+```
+//Indicate UIImageView rect
+CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20);
+
+//And then returns a UIImageView which is QRCode picture with rect through indicating data string and amidst a icon and shadow effect
+UIImage *center = [UIImage imageNamed:@"centericon"];
+UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center needShadow:YES];
+```
+
+
 
 
 # ZRQRCodeViewController
@@ -171,7 +201,7 @@ ZRQRCodeViewController是一个非常好用的二维码扫描框架，兼容iOS 
 $ gem install cocoapods
 ```
 
-> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 2.8
+> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 3.1
 
 #### podfile
 
@@ -181,7 +211,7 @@ $ gem install cocoapods
 source 'https://github.com/VictorZhang2014/ZRQRCodeViewController'
 platform :ios, '7.0'  
 
-pod 'ZRQRCodeViewController', '~>2.8'
+pod 'ZRQRCodeViewController', '~>3.1'
 ```
 接着，运行以下命令
 
@@ -291,4 +321,34 @@ qrCode.saveImaegText = savedImageText;
 
 //2.调用超简单
 [[[ZRQRCodeScanView alloc] init] openQRCodeScan:self];
+```
+
+
+### 生成二维码
+```
+//指定UIImageView 的 rect 大小
+CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20);
+
+//然后，返回一个QRCode图片，通过指定大小的rect和数据字符串
+UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com"];
+```
+
+### 生成二维码 带 中间icon
+```
+//指定UIImageView 的 rect 大小
+CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20);
+
+//然后，返回一个QRCode图片，通过指定大小的rect和数据字符串，中间带一个icon
+UIImage *center = [UIImage imageNamed:@"centericon"];
+UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center];
+```
+
+### 生成二维码 带 中间icon ,并且带有阴影效果
+```
+//指定UIImageView 的 rect 大小
+CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20);
+
+//然后，返回一个QRCode图片，通过指定大小的rect和数据字符串，中间带一个icon, 并且有阴影效果
+UIImage *center = [UIImage imageNamed:@"centericon"];
+UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center needShadow:YES];
 ```

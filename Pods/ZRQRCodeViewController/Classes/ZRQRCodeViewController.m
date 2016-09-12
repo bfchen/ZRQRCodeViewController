@@ -14,13 +14,12 @@
 #import "ZRQRCodeController.h"
 #import <Photos/Photos.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-
-static MyBlockCompletion recognizeCompletion;
-static MyActionSheetCompletion actionSheetCompletion;
+#import "ZRQRGenerateCode.h"
 
 #define ScanMenuHeight 45
 #define ABOVEiOS8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
-#define ABOVEiOS9 [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0
+
+typedef void(^ActionBlock)(int index, NSString *item);
 
 typedef NS_ENUM(NSInteger)
 {
@@ -28,7 +27,7 @@ typedef NS_ENUM(NSInteger)
     ZRQRCodeExtractTypeByScanning
 }ZRQRCodeExtractType;
 
-@interface ZRQRCodeViewController ()<AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ZRQRCodeViewController ()<AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 {
     AVCaptureSession * session;
     UIButton * torchBtn;
@@ -51,6 +50,10 @@ typedef NS_ENUM(NSInteger)
 
 @property (nonatomic, copy) MyBlockFailure blockFailure;
 @property (nonatomic, assign) ZRQRCodeExtractType codeExtractType;
+
+@property (nonatomic, copy) ActionBlock actionBlockHandler;
+@property (nonatomic, copy) MyBlockCompletion recognizeCompletion;
+@property (nonatomic, copy) MyActionSheetCompletion actionSheetCompletion;
 @end
 
 @implementation ZRQRCodeViewController
@@ -130,7 +133,7 @@ typedef NS_ENUM(NSInteger)
     }
     
     if (completion) {
-        recognizeCompletion = completion;
+        self.recognizeCompletion = completion;
     }
 
     if (failure) {
@@ -156,7 +159,7 @@ typedef NS_ENUM(NSInteger)
     }
     
     if (completion) {
-        recognizeCompletion = completion;
+        self.recognizeCompletion = completion;
     }
     
     if (failure) {
@@ -193,7 +196,7 @@ typedef NS_ENUM(NSInteger)
     }
     
     if (completion) {
-        recognizeCompletion = completion;
+        self.recognizeCompletion = completion;
     }
     
     [self bindLongPressGesture:viewController Object:object];
@@ -212,7 +215,7 @@ typedef NS_ENUM(NSInteger)
     }
     
     if (completion) {
-        recognizeCompletion = completion;
+        self.recognizeCompletion = completion;
     }
     
     if (failure) {
@@ -221,7 +224,7 @@ typedef NS_ENUM(NSInteger)
     }
     
     if (actionSheetsCompletion) {
-        actionSheetCompletion = actionSheetsCompletion;
+        self.actionSheetCompletion = actionSheetsCompletion;
     }
     
     [self bindLongPressGesture:viewController Object:object];
@@ -288,8 +291,8 @@ typedef NS_ENUM(NSInteger)
             }
         }
         
-        if (!isWKWebView && recognizeCompletion) {
-            recognizeCompletion(@"Can not support other type of object! ");
+        if (!isWKWebView && self.recognizeCompletion) {
+            self.recognizeCompletion(@"Can not support other type of object! ");
         }
     }
 }
@@ -323,19 +326,22 @@ typedef NS_ENUM(NSInteger)
     if (self.cancelButton && self.cancelButton.length > 0) {
         tmpCancel = self.cancelButton;
     }
-    [[ZRAlertController defaultAlert] actionView:self.lastController title:@"" cancel:tmpCancel others:tmpArr handler:^(int index, NSString * _Nonnull item) {
-        if ((tExtractTxt.length > 0 || self.extractQRCodeText.length > 0) &&
-            ([tExtractTxt isEqualToString:item] || [self.extractQRCodeText isEqualToString:item])) {
-            UIImage *image = [self screenShotImageByView:self.lastController.view];
-            [self detectQRCodeFromImage:image];
-        } else if ((tSaveImg.length > 0 || self.saveImaegText.length > 0) &&
-                   ([tSaveImg isEqualToString:item] || [self.saveImaegText isEqualToString:item])) {
-            UIImage *image = [self screenShotImageByView:self.lastController.view];
+    
+    __weak typeof(self) SELF = self;
+    [self actionViewWithTitle:@"" cancel:tmpCancel others:tmpArr handler:^(int index, NSString * _Nonnull item) {
+        
+        if ((tExtractTxt.length > 0 || SELF.extractQRCodeText.length > 0) &&
+            ([tExtractTxt isEqualToString:item] || [SELF.extractQRCodeText isEqualToString:item])) {
+            UIImage *image = [SELF screenShotImageByView:SELF.lastController.view];
+            [SELF detectQRCodeFromImage:image];
+        } else if ((tSaveImg.length > 0 || SELF.saveImaegText.length > 0) &&
+                   ([tSaveImg isEqualToString:item] || [SELF.saveImaegText isEqualToString:item])) {
+            UIImage *image = [SELF screenShotImageByView:SELF.lastController.view];
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
         }
 
-        if (actionSheetCompletion) {
-            actionSheetCompletion(index, item);
+        if (SELF.actionSheetCompletion) {
+            SELF.actionSheetCompletion(index, item);
         }
     }];
 }
@@ -680,8 +686,8 @@ typedef NS_ENUM(NSInteger)
                 [self continueScanning];
             });
         }
-        if (recognizeCompletion) {
-            recognizeCompletion(svalue);
+        if (self.recognizeCompletion) {
+            self.recognizeCompletion(svalue);
         }
     }
 }
@@ -716,8 +722,8 @@ typedef NS_ENUM(NSInteger)
         }
         strValue = [[NSString alloc] initWithString:self.textWhenNotRecognized];
     }
-    if (recognizeCompletion) {
-        recognizeCompletion(strValue);
+    if (self.recognizeCompletion) {
+        self.recognizeCompletion(strValue);
     }
 }
 
@@ -728,12 +734,12 @@ typedef NS_ENUM(NSInteger)
         self.scanTimer = nil;
     }
 
-    if (recognizeCompletion) {
-        recognizeCompletion = nil;
+    if (self.recognizeCompletion) {
+        self.recognizeCompletion = nil;
     }
     
-    if (actionSheetCompletion) {
-        actionSheetCompletion = nil;
+    if (self.actionSheetCompletion) {
+        self.actionSheetCompletion = nil;
     }
     
     if (self.customView) {
@@ -795,6 +801,67 @@ typedef NS_ENUM(NSInteger)
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
     return UIInterfaceOrientationPortrait;
+}
+
+
+- (UIImageView *)generateQuickResponseCodeWithFrame:(CGRect)imageRect dataString:(NSString *)dataString
+{
+    return [[[ZRQRGenerateCode alloc] init] generateQuickResponseCodeWithFrame:imageRect dataString:dataString];
+}
+
+
+- (UIImageView *)generateQuickResponseCodeWithFrame:(CGRect)imageRect dataString:(NSString *)dataString centerImage:(UIImage *)image
+{
+   return [[[ZRQRGenerateCode alloc] init] generateQuickResponseCodeWithFrame:imageRect dataString:dataString centerImage:image];
+}
+
+- (UIImageView *)generateQuickResponseCodeWithFrame:(CGRect)imageRect dataString:(NSString *)dataString centerImage:(UIImage *)image needShadow:(BOOL)shadow
+{
+   return [[[ZRQRGenerateCode alloc] init] generateQuickResponseCodeWithFrame:imageRect dataString:dataString centerImage:image needShadow:YES];
+}
+
+
+- (void)actionViewWithTitle:(NSString * _Nullable)title cancel:(NSString *)cancel others:(NSArray *)others handler:(ActionBlock)handler
+{
+    if (ABOVEiOS8) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        for (int i = 0; i < others.count; i++) {
+            UIAlertAction *action = [UIAlertAction actionWithTitle:others[i] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                if (handler) {
+                    handler(i + 1, others[i]);
+                }
+            }];
+            [alertController addAction:action];
+        }
+        if (cancel.length) {
+            UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:cancel style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                if (handler) {
+                    handler(0, cancel);
+                }
+            }];
+            [alertController addAction:actionCancel];
+        }
+        if (self.lastController.navigationController) {
+           [self.lastController.navigationController presentViewController:alertController animated:YES completion:nil];
+        } else {
+            [self.lastController presentViewController:alertController animated:YES completion:nil];
+        }
+        
+    } else {
+        self.actionBlockHandler = handler;
+        UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:cancel destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+        for (NSString *item in others) {
+            [action addButtonWithTitle:item];
+        }
+        [action showInView:self.lastController.view];
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (self.actionBlockHandler) {
+        self.actionBlockHandler((int)buttonIndex, [actionSheet buttonTitleAtIndex:buttonIndex]);
+    }
 }
 
 @end

@@ -101,16 +101,18 @@ typedef NS_ENUM(NSInteger){
 
 @interface ZRAlertController()
 @property (nonatomic, strong) ZRDelegateController *delegateController;
+
+@property (nonatomic, strong) UIViewController *windowsRootViewController;
 @end
 
 @implementation ZRAlertController
 
-- (UIViewController *)ownViewController
+- (UIViewController *)windowsRootViewController
 {
-    if (!_ownViewController) {
-        _ownViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    if (!_windowsRootViewController) {
+        _windowsRootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     }
-    return _ownViewController;
+    return _windowsRootViewController;
 }
 
 + (instancetype)defaultAlert
@@ -148,7 +150,7 @@ typedef NS_ENUM(NSInteger){
             }
         }];
         [alertC addAction:action];
-        [self.ownViewController presentViewController:alertC animated:YES completion:nil];
+        [self.windowsRootViewController presentViewController:alertC animated:YES completion:nil];
         
     } else {
         self.delegateController.methodStyle = ZRAlertMethodStyleCompletion;
@@ -180,7 +182,7 @@ typedef NS_ENUM(NSInteger){
         }];
         [alertC addAction:action0];
         [alertC addAction:action1];
-        [self.ownViewController presentViewController:alertC animated:YES completion:nil];
+        [self.windowsRootViewController presentViewController:alertC animated:YES completion:nil];
     } else {
         self.delegateController.methodStyle = ZRAlertMethodStyleDefault;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self.delegateController cancelButtonTitle:cancel otherButtonTitles:okay, nil];
@@ -223,7 +225,7 @@ typedef NS_ENUM(NSInteger){
         }];
         [alertC addAction:action0];
         [alertC addAction:action1];
-        [self.ownViewController presentViewController:alertC animated:YES completion:nil];
+        [self.windowsRootViewController presentViewController:alertC animated:YES completion:nil];
         
     } else {
         
@@ -277,7 +279,7 @@ typedef NS_ENUM(NSInteger){
         }];
         [alertC addAction:action0];
         [alertC addAction:action1];
-        [self.ownViewController presentViewController:alertC animated:YES completion:nil];
+        [self.windowsRootViewController presentViewController:alertC animated:YES completion:nil];
         
     } else {
         
@@ -325,14 +327,14 @@ typedef NS_ENUM(NSInteger){
             }];
             [alertController addAction:actionCancel];
         }
-        [self.ownViewController presentViewController:alertController animated:YES completion:nil];
+        [self.windowsRootViewController presentViewController:alertController animated:YES completion:nil];
     } else {
         actionBlockHandler = handler;
         UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:title delegate:self.delegateController cancelButtonTitle:cancel destructiveButtonTitle:nil otherButtonTitles:nil, nil];
         for (NSString *item in others) {
             [action addButtonWithTitle:item];
         }
-        [action showInView:self.ownViewController.view];
+        [action showInView:self.windowsRootViewController.view];
     }
 }
 

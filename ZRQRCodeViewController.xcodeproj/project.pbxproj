@@ -11,7 +11,6 @@
 		5716B7921D37816D00731869 /* ZRTmpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5716B7911D37816D00731869 /* ZRTmpViewController.m */; };
 		571936D71D26A966007D5A09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 571936D61D26A966007D5A09 /* main.m */; };
 		571936DA1D26A966007D5A09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 571936D91D26A966007D5A09 /* AppDelegate.m */; };
-		571936DD1D26A966007D5A09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571936DC1D26A966007D5A09 /* ViewController.m */; };
 		571936E01D26A966007D5A09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571936DE1D26A966007D5A09 /* Main.storyboard */; };
 		571936E21D26A966007D5A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 571936E11D26A966007D5A09 /* Assets.xcassets */; };
 		571936E51D26A966007D5A09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571936E31D26A966007D5A09 /* LaunchScreen.storyboard */; };
@@ -24,7 +23,6 @@
 		57E7D24A1D35063B008A6FE2 /* ZRQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57E7D2491D35063B008A6FE2 /* ZRQRCode.bundle */; };
 		57F528AB1D29453F00DB8158 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F528AA1D29453F00DB8158 /* main.m */; };
 		57F528AE1D29453F00DB8158 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F528AD1D29453F00DB8158 /* AppDelegate.m */; };
-		57F528B11D29453F00DB8158 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F528B01D29453F00DB8158 /* MainViewController.m */; };
 		57F528B41D29453F00DB8158 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F528B21D29453F00DB8158 /* Main.storyboard */; };
 		57F528B61D29453F00DB8158 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F528B51D29453F00DB8158 /* Assets.xcassets */; };
 		57F528B91D29453F00DB8158 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F528B71D29453F00DB8158 /* LaunchScreen.storyboard */; };
@@ -32,6 +30,10 @@
 		9032C6E01D865AF00067A92D /* ZRMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6DF1D865AF00067A92D /* ZRMainViewController.m */; };
 		9032C6E31D868D440067A92D /* ZRGeneratedQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6E21D868D440067A92D /* ZRGeneratedQRCodeViewController.m */; };
 		9032C6E81D86A1020067A92D /* ZRQRGenerateCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6E71D86A1020067A92D /* ZRQRGenerateCode.m */; };
+		9032C6F11D86B6D40067A92D /* ZRGeneratedQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6EA1D86B6D40067A92D /* ZRGeneratedQRCodeViewController.m */; };
+		9032C6F21D86B6D40067A92D /* ZRMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6EC1D86B6D40067A92D /* ZRMainViewController.m */; };
+		9032C6F31D86B6D40067A92D /* ZRQRCodeScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6EE1D86B6D40067A92D /* ZRQRCodeScanView.m */; };
+		9032C6F41D86B6D40067A92D /* ZRTmpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6F01D86B6D40067A92D /* ZRTmpViewController.m */; };
 		90BAF9D61D7FB1CA006278BB /* ZRAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF9D51D7FB1CA006278BB /* ZRAlertController.m */; };
 		9554A83182562D4FD5B20B7A /* libPods-ZRQRCodeViewController(Demo).a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B1C336887F663BE0024B0F /* libPods-ZRQRCodeViewController(Demo).a */; };
 /* End PBXBuildFile section */
@@ -60,8 +62,6 @@
 		571936D61D26A966007D5A09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		571936D81D26A966007D5A09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		571936D91D26A966007D5A09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		571936DB1D26A966007D5A09 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		571936DC1D26A966007D5A09 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		571936DF1D26A966007D5A09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		571936E11D26A966007D5A09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		571936E41D26A966007D5A09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,8 +77,6 @@
 		57F528AA1D29453F00DB8158 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57F528AC1D29453F00DB8158 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57F528AD1D29453F00DB8158 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		57F528AF1D29453F00DB8158 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		57F528B01D29453F00DB8158 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		57F528B31D29453F00DB8158 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57F528B51D29453F00DB8158 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57F528B81D29453F00DB8158 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,6 +90,14 @@
 		9032C6E21D868D440067A92D /* ZRGeneratedQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRGeneratedQRCodeViewController.m; sourceTree = "<group>"; };
 		9032C6E61D86A1020067A92D /* ZRQRGenerateCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRQRGenerateCode.h; sourceTree = "<group>"; };
 		9032C6E71D86A1020067A92D /* ZRQRGenerateCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRQRGenerateCode.m; sourceTree = "<group>"; };
+		9032C6E91D86B6D40067A92D /* ZRGeneratedQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRGeneratedQRCodeViewController.h; sourceTree = "<group>"; };
+		9032C6EA1D86B6D40067A92D /* ZRGeneratedQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRGeneratedQRCodeViewController.m; sourceTree = "<group>"; };
+		9032C6EB1D86B6D40067A92D /* ZRMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRMainViewController.h; sourceTree = "<group>"; };
+		9032C6EC1D86B6D40067A92D /* ZRMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRMainViewController.m; sourceTree = "<group>"; };
+		9032C6ED1D86B6D40067A92D /* ZRQRCodeScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRQRCodeScanView.h; sourceTree = "<group>"; };
+		9032C6EE1D86B6D40067A92D /* ZRQRCodeScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRQRCodeScanView.m; sourceTree = "<group>"; };
+		9032C6EF1D86B6D40067A92D /* ZRTmpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRTmpViewController.h; sourceTree = "<group>"; };
+		9032C6F01D86B6D40067A92D /* ZRTmpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRTmpViewController.m; sourceTree = "<group>"; };
 		90BAF9D41D7FB1CA006278BB /* ZRAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRAlertController.h; sourceTree = "<group>"; };
 		90BAF9D51D7FB1CA006278BB /* ZRAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRAlertController.m; sourceTree = "<group>"; };
 		9F0EAA006E8E61895FF90B58 /* libPods-ZRQRCodeViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZRQRCodeViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,8 +162,6 @@
 				571936D91D26A966007D5A09 /* AppDelegate.m */,
 				9032C6DE1D865AF00067A92D /* ZRMainViewController.h */,
 				9032C6DF1D865AF00067A92D /* ZRMainViewController.m */,
-				571936DB1D26A966007D5A09 /* ViewController.h */,
-				571936DC1D26A966007D5A09 /* ViewController.m */,
 				577440191D599CB400293E80 /* ZRQRCodeScanView.h */,
 				5774401A1D599CB400293E80 /* ZRQRCodeScanView.m */,
 				90BAF9D41D7FB1CA006278BB /* ZRAlertController.h */,
@@ -193,10 +197,16 @@
 		57F528A81D29453F00DB8158 /* ZRQRCodeViewController(Demo) */ = {
 			isa = PBXGroup;
 			children = (
+				9032C6E91D86B6D40067A92D /* ZRGeneratedQRCodeViewController.h */,
+				9032C6EA1D86B6D40067A92D /* ZRGeneratedQRCodeViewController.m */,
+				9032C6EB1D86B6D40067A92D /* ZRMainViewController.h */,
+				9032C6EC1D86B6D40067A92D /* ZRMainViewController.m */,
+				9032C6ED1D86B6D40067A92D /* ZRQRCodeScanView.h */,
+				9032C6EE1D86B6D40067A92D /* ZRQRCodeScanView.m */,
+				9032C6EF1D86B6D40067A92D /* ZRTmpViewController.h */,
+				9032C6F01D86B6D40067A92D /* ZRTmpViewController.m */,
 				57F528AC1D29453F00DB8158 /* AppDelegate.h */,
 				57F528AD1D29453F00DB8158 /* AppDelegate.m */,
-				57F528AF1D29453F00DB8158 /* MainViewController.h */,
-				57F528B01D29453F00DB8158 /* MainViewController.m */,
 				57F528B21D29453F00DB8158 /* Main.storyboard */,
 				57F528B51D29453F00DB8158 /* Assets.xcassets */,
 				57F528B71D29453F00DB8158 /* LaunchScreen.storyboard */,
@@ -437,7 +447,6 @@
 				57F8AF681D30F918007D2F52 /* ZRAudio.m in Sources */,
 				571936EE1D26A996007D5A09 /* ZRQRCodeViewController.m in Sources */,
 				5716B7921D37816D00731869 /* ZRTmpViewController.m in Sources */,
-				571936DD1D26A966007D5A09 /* ViewController.m in Sources */,
 				9032C6E01D865AF00067A92D /* ZRMainViewController.m in Sources */,
 				571936DA1D26A966007D5A09 /* AppDelegate.m in Sources */,
 				571936D71D26A966007D5A09 /* main.m in Sources */,
@@ -448,8 +457,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57F528B11D29453F00DB8158 /* MainViewController.m in Sources */,
+				9032C6F11D86B6D40067A92D /* ZRGeneratedQRCodeViewController.m in Sources */,
+				9032C6F31D86B6D40067A92D /* ZRQRCodeScanView.m in Sources */,
+				9032C6F41D86B6D40067A92D /* ZRTmpViewController.m in Sources */,
 				57F528AE1D29453F00DB8158 /* AppDelegate.m in Sources */,
+				9032C6F21D86B6D40067A92D /* ZRMainViewController.m in Sources */,
 				57F528AB1D29453F00DB8158 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

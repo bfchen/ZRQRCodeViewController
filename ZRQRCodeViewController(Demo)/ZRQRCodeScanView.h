@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ZRCodeScanView.h
 //  ZRQRCodeViewController
 //
 //  Created by Victor John on 7/1/16.
@@ -12,8 +12,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ZRQRCodeScanView : UIView
 
+- (void)openQRCodeScan:(UIViewController *)viewController;
 
 @end
-

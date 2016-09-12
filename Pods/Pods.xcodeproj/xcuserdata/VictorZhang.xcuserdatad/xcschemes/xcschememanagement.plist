@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ZRAlertController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZRQRCodeViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4AF2C8A70862B6529B58E59FBD4B360E</key>
+		<key>319EB5FD44D316DD2AF5034745EFF89D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>64B721C75934D28D64EAE835D6121D4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76FF604FD51DF83EA82E0D83AD87A11A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>888B0368CDCBFE423C99A8344BDC0CDB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9FF35777A17737C119760152A49EE122</key>
 		<dict>
 			<key>primary</key>
 			<true/>
