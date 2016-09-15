@@ -2,6 +2,9 @@
 # ZRQRCodeViewController
 A delightful QR Code Scanning framework that is compatible with iOS 7.0 and later. It has strongly precision to scan QR Code. It can scan QR Code and Bar Code.
 
+### Effect Photo
+![ZRQRCodeViewController Effect Photo 1](https://github.com/VictorZhang2014/ZRQRCodeViewController/blob/master/pictures/ZRQRCodeViewController.gif "ZRQRCodeViewController")
+
 ### 滚动到最下面有中文说明
 ### CSDN博文
 - [CSDN博文详解 ZRQRCodeViewController](http://blog.csdn.net/u013538542/article/details/51883644) 
