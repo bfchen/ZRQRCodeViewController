@@ -157,7 +157,7 @@ qrCode.saveImaegText = savedImageText;
 CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20);
 
 //And then returns a UIImageView which is QRCode picture with rect through indicating data string
-UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com"];
+UIImageView *myImage = [[[ZRQRCodeViewController alloc] init] generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com"];
 ```
 
 ### Generate QR Code as a picture amidst a center icon 
@@ -167,7 +167,7 @@ CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [
 
 //And then returns a UIImageView which is QRCode picture with rect through indicating data string and amidst a icon
 UIImage *center = [UIImage imageNamed:@"centericon"];
-UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center];
+UIImageView *myImage = [[[ZRQRCodeViewController alloc] init] generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center];
 ```
 
 ### Generate QR Code as a picture amidst a center icon and has shadow effect
@@ -177,7 +177,7 @@ CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [
 
 //And then returns a UIImageView which is QRCode picture with rect through indicating data string and amidst a icon and shadow effect
 UIImage *center = [UIImage imageNamed:@"centericon"];
-UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center needShadow:YES];
+UIImageView *myImage = [[[ZRQRCodeViewController alloc] init] generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center needShadow:YES];
 ```
 
 
@@ -333,7 +333,7 @@ qrCode.saveImaegText = savedImageText;
 CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20);
 
 //然后，返回一个QRCode图片，通过指定大小的rect和数据字符串
-UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com"];
+UIImageView *myImage = [[[ZRQRCodeViewController alloc] init] generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com"];
 ```
 
 ### 生成二维码 带 中间icon
@@ -343,7 +343,7 @@ CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [
 
 //然后，返回一个QRCode图片，通过指定大小的rect和数据字符串，中间带一个icon
 UIImage *center = [UIImage imageNamed:@"centericon"];
-UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center];
+UIImageView *myImage = [[[ZRQRCodeViewController alloc] init] generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center];
 ```
 
 ### 生成二维码 带 中间icon ,并且带有阴影效果
@@ -353,5 +353,5 @@ CGRect rect = CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, [
 
 //然后，返回一个QRCode图片，通过指定大小的rect和数据字符串，中间带一个icon, 并且有阴影效果
 UIImage *center = [UIImage imageNamed:@"centericon"];
-UIImageView *myImage = [self generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center needShadow:YES];
+UIImageView *myImage = [[[ZRQRCodeViewController alloc] init] generateQuickResponseCodeWithFrame:rect dataString:@"https://www.baidu.com" centerImage:center needShadow:YES];
 ```
