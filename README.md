@@ -24,7 +24,7 @@ A delightful QR Code Scanning framework that is compatible with iOS 7.0 and late
 $ gem install cocoapods
 ```
 
-> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 3.1
+> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 3.1.1
 
 #### podfile
 
@@ -34,7 +34,7 @@ To integrate ZRQRCodeViewController into your Xcode project using Cocoapods, spe
 source 'https://github.com/VictorZhang2014/ZRQRCodeViewController'
 platform :ios, '7.0'  
 
-pod 'ZRQRCodeViewController', '~>3.1'
+pod 'ZRQRCodeViewController', '~>3.1.1'
 ```
 Then, run the following command:
 
@@ -204,7 +204,7 @@ ZRQRCodeViewController是一个非常好用的二维码扫描框架，兼容iOS 
 $ gem install cocoapods
 ```
 
-> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 3.1
+> Cocoapods 1.0.0+ is required to build ZRQRCodeViewController 3.1.1
 
 #### podfile
 
@@ -214,7 +214,7 @@ $ gem install cocoapods
 source 'https://github.com/VictorZhang2014/ZRQRCodeViewController'
 platform :ios, '7.0'  
 
-pod 'ZRQRCodeViewController', '~>3.1'
+pod 'ZRQRCodeViewController', '~>3.1.1'
 ```
 接着，运行以下命令
 
