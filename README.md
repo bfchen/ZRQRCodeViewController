@@ -4,8 +4,8 @@ A delightful QR Code Scanning framework that is compatible with iOS 7.0 and late
 
 ### Effect Photo
 ![ZRQRCodeViewController Effect Photo 1](https://github.com/VictorZhang2014/ZRQRCodeViewController/blob/master/pictures/ZRQRCodeViewController.gif "ZRQRCodeViewController")
-![ZRQRCodeViewController Effect Photo 2](https://github.com/VictorZhang2014/ZRQRCodeViewController/blob/master/pictures/ZRQRCodeViewController1.gif "ZRQRCodeViewController")
-![ZRQRCodeViewController Effect Photo 3](https://github.com/VictorZhang2014/ZRQRCodeViewController/blob/master/pictures/ZRQRCodeViewController2.gif "ZRQRCodeViewController")
+![ZRQRCodeViewController Effect Photo 2](https://github.com/VictorZhang2014/ZRQRCodeViewController/blob/master/pictures/ZRQRCodeViewController1.png "ZRQRCodeViewController")
+![ZRQRCodeViewController Effect Photo 3](https://github.com/VictorZhang2014/ZRQRCodeViewController/blob/master/pictures/ZRQRCodeViewController2.png "ZRQRCodeViewController")
 
 ### 滚动到最下面有中文说明
 ### CSDN博文
