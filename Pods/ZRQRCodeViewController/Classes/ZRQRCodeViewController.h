@@ -27,6 +27,12 @@ typedef NS_ENUM(NSInteger) {
 
 @property (nonatomic, copy) NSString *qrCodeNavigationTitle;
 
+/*
+  Play sound when scanning succeeded
+ */
+@property (nonatomic, copy) NSString *qrSuccessSoundName;
+@property (nonatomic, copy) NSString *qrSuccessSoundNameExt;
+
 - (instancetype)initWithScanType:(ZRQRCodeScanType)scanType;
 
 @property (nonatomic, assign) BOOL enabledLight;

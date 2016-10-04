@@ -7,7 +7,7 @@ target 'ZRQRCodeViewController' do
 end
 
 target 'ZRQRCodeViewController(Demo)' do
-    pod 'ZRQRCodeViewController', '~>3.1.1'
+    pod 'ZRQRCodeViewController', '~>3.1.2'
     pod 'ZRAlertController', '~>2.2'
 end
 

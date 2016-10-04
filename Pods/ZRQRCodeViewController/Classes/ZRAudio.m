@@ -31,7 +31,9 @@
 
 - (SystemSoundID)getDictSystemSoundID:(NSString **)soundName
 {
-    *soundName = @"ZR_Scan_Success";
+    if (!*soundName)
+        *soundName = @"ZR_Scan_Success";
+    
     NSDictionary *soundDictionary = [[NSDictionary alloc] init];
     SystemSoundID soundID = [soundDictionary[*soundName] unsignedIntValue];
     return soundID;
@@ -42,7 +44,22 @@
     NSString *soundName = [[NSString alloc] init];
     SystemSoundID soundID = [self getDictSystemSoundID:&soundName];
     if(!soundID){
-        NSString *cafPath = [[NSBundle bundleWithPath:[self.customBundle getBundlePath]] pathForResource:soundName ofType:@".caf"];
+        NSString *cafPath = [[NSBundle bundleWithPath:[self.customBundle getBundlePath]] pathForResource:soundName ofType:@".wav"];
+        NSURL *url = [NSURL URLWithString:cafPath];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)(url), &soundID);
+        AudioServicesPlayAlertSound(soundID);
+        self.systemSoundId = soundID;
+    }
+}
+
+- (void)playSoundWhenScanSuccessWithSoundName:(NSString *)soundName soundExt:(NSString *)soundExt
+{
+    NSAssert(!soundName, @"Sound Name must be non-nil!");
+    NSAssert(!soundExt, @"Sound Ext must be non-nil!");
+    
+    SystemSoundID soundID = [self getDictSystemSoundID:&soundName];
+    if(!soundID){
+        NSString *cafPath = [[NSBundle bundleWithPath:[self.customBundle getBundlePath]] pathForResource:soundName ofType:soundExt];
         NSURL *url = [NSURL URLWithString:cafPath];
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)(url), &soundID);
         AudioServicesPlayAlertSound(soundID);
@@ -52,7 +69,9 @@
 
 - (void)disposeSound
 {
-    AudioServicesDisposeSystemSoundID(self.systemSoundId);
+    if (self.systemSoundId) {
+        AudioServicesDisposeSystemSoundID(self.systemSoundId);
+    }
 }
 
 @end
