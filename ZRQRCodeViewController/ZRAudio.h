@@ -17,6 +17,8 @@
 
 - (void)playSoundWhenScanSuccess;
 
+- (void)playSoundWhenScanSuccessWithSoundName:(NSString *)soundName soundExt:(NSString *)soundExt;
+
 - (void)disposeSound;
 
 @end

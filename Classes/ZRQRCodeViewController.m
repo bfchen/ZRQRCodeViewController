@@ -754,7 +754,11 @@ typedef NS_ENUM(NSInteger)
  **/
 - (void)playSoundWhenScanSuccess
 {
-    [self.playSound playSoundWhenScanSuccess];
+    if (self.qrSuccessSoundName && self.qrSuccessSoundNameExt) {
+        [self.playSound playSoundWhenScanSuccessWithSoundName:self.qrSuccessSoundName soundExt:self.qrSuccessSoundNameExt];
+    } else {
+        [self.playSound playSoundWhenScanSuccess];
+    }
 }
 
 - (void)disposeSound

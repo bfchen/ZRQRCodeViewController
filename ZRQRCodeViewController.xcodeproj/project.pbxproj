@@ -20,7 +20,7 @@
 		578858A51D33408B0050A443 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578858A41D33408B0050A443 /* WebKit.framework */; };
 		57A8CDF81D3F73A400A3DA5E /* ZRQRCodeViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 571936EC1D26A996007D5A09 /* ZRQRCodeViewController.h */; };
 		57A8CDFA1D3F73A400A3DA5E /* ZRAudio.h in Sources */ = {isa = PBXBuildFile; fileRef = 57F8AF661D30F918007D2F52 /* ZRAudio.h */; };
-		57E7D24A1D35063B008A6FE2 /* ZRQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57E7D2491D35063B008A6FE2 /* ZRQRCode.bundle */; };
+		57E496251DA3B70A00FEFDAA /* ZRQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57E496241DA3B70A00FEFDAA /* ZRQRCode.bundle */; };
 		57F528AB1D29453F00DB8158 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F528AA1D29453F00DB8158 /* main.m */; };
 		57F528AE1D29453F00DB8158 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F528AD1D29453F00DB8158 /* AppDelegate.m */; };
 		57F528B41D29453F00DB8158 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F528B21D29453F00DB8158 /* Main.storyboard */; };
@@ -71,8 +71,8 @@
 		577440191D599CB400293E80 /* ZRQRCodeScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRQRCodeScanView.h; sourceTree = "<group>"; };
 		5774401A1D599CB400293E80 /* ZRQRCodeScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRQRCodeScanView.m; sourceTree = "<group>"; };
 		578858A41D33408B0050A443 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		57E496241DA3B70A00FEFDAA /* ZRQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZRQRCode.bundle; sourceTree = "<group>"; };
 		57E7D2481D35029A008A6FE2 /* ZRQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRQRCodeController.h; sourceTree = "<group>"; };
-		57E7D2491D35063B008A6FE2 /* ZRQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZRQRCode.bundle; sourceTree = "<group>"; };
 		57F528A71D29453F00DB8158 /* ZRQRCodeViewController(Demo).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZRQRCodeViewController(Demo).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F528AA1D29453F00DB8158 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57F528AC1D29453F00DB8158 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		571936D41D26A966007D5A09 /* ZRQRCodeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				57E7D2491D35063B008A6FE2 /* ZRQRCode.bundle */,
+				57E496241DA3B70A00FEFDAA /* ZRQRCode.bundle */,
 				571936D81D26A966007D5A09 /* AppDelegate.h */,
 				571936D91D26A966007D5A09 /* AppDelegate.m */,
 				9032C6DE1D865AF00067A92D /* ZRMainViewController.h */,
@@ -297,6 +297,7 @@
 					571936D11D26A966007D5A09 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = B873AZ7BS6;
+						ProvisioningStyle = Automatic;
 					};
 					57F528A61D29453F00DB8158 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -328,8 +329,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				571936E51D26A966007D5A09 /* LaunchScreen.storyboard in Resources */,
+				57E496251DA3B70A00FEFDAA /* ZRQRCode.bundle in Resources */,
 				571936E21D26A966007D5A09 /* Assets.xcassets in Resources */,
-				57E7D24A1D35063B008A6FE2 /* ZRQRCode.bundle in Resources */,
 				571936E01D26A966007D5A09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,6 +689,7 @@
 			baseConfigurationReference = 49F6CC693191CCD063CCD567 /* Pods-ZRQRCodeViewController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B873AZ7BS6;
 				INFOPLIST_FILE = ZRQRCodeViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -703,6 +705,7 @@
 			baseConfigurationReference = 2DC88EAC207E699444889EC2 /* Pods-ZRQRCodeViewController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B873AZ7BS6;
 				INFOPLIST_FILE = ZRQRCodeViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
