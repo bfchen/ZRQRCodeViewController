@@ -28,7 +28,8 @@
     
     UIImageView *myImage = [self generateQRCodeWithFrame:imageRect dataString:dataString];
     if (image) {
-        [self addCenterImageWithOrigin:&myImage withWidth:80 centerImage:image];
+        CGFloat centerWidth = imageRect.size.width / 5.15f;
+        [self addCenterImageWithOrigin:&myImage withWidth:centerWidth centerImage:image];
     }
     return myImage;
 }

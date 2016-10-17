@@ -27,6 +27,8 @@
 		57F528B61D29453F00DB8158 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F528B51D29453F00DB8158 /* Assets.xcassets */; };
 		57F528B91D29453F00DB8158 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F528B71D29453F00DB8158 /* LaunchScreen.storyboard */; };
 		57F8AF681D30F918007D2F52 /* ZRAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F8AF671D30F918007D2F52 /* ZRAudio.m */; };
+		9021AF551DB08C1600188C4B /* ZRQRCodeScanView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9021AF541DB08C1600188C4B /* ZRQRCodeScanView2.m */; };
+		9021AF5A1DB0D38100188C4B /* ZRQRCodeScanView3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9021AF591DB0D38100188C4B /* ZRQRCodeScanView3.m */; };
 		9032C6E01D865AF00067A92D /* ZRMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6DF1D865AF00067A92D /* ZRMainViewController.m */; };
 		9032C6E31D868D440067A92D /* ZRGeneratedQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6E21D868D440067A92D /* ZRGeneratedQRCodeViewController.m */; };
 		9032C6E81D86A1020067A92D /* ZRQRGenerateCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032C6E71D86A1020067A92D /* ZRQRGenerateCode.m */; };
@@ -84,6 +86,10 @@
 		57F8AF661D30F918007D2F52 /* ZRAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRAudio.h; sourceTree = "<group>"; };
 		57F8AF671D30F918007D2F52 /* ZRAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRAudio.m; sourceTree = "<group>"; };
 		6429C4792C0DA18377D585E5 /* Pods-ZRQRCodeViewController(Demo).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZRQRCodeViewController(Demo).release.xcconfig"; path = "Pods/Target Support Files/Pods-ZRQRCodeViewController(Demo)/Pods-ZRQRCodeViewController(Demo).release.xcconfig"; sourceTree = "<group>"; };
+		9021AF531DB08C1600188C4B /* ZRQRCodeScanView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRQRCodeScanView2.h; sourceTree = "<group>"; };
+		9021AF541DB08C1600188C4B /* ZRQRCodeScanView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRQRCodeScanView2.m; sourceTree = "<group>"; };
+		9021AF581DB0D38100188C4B /* ZRQRCodeScanView3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRQRCodeScanView3.h; sourceTree = "<group>"; };
+		9021AF591DB0D38100188C4B /* ZRQRCodeScanView3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRQRCodeScanView3.m; sourceTree = "<group>"; };
 		9032C6DE1D865AF00067A92D /* ZRMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRMainViewController.h; sourceTree = "<group>"; };
 		9032C6DF1D865AF00067A92D /* ZRMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRMainViewController.m; sourceTree = "<group>"; };
 		9032C6E11D868D440067A92D /* ZRGeneratedQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRGeneratedQRCodeViewController.h; sourceTree = "<group>"; };
@@ -157,22 +163,15 @@
 		571936D41D26A966007D5A09 /* ZRQRCodeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9021AF5C1DB0D39800188C4B /* SampleView */,
+				9021AF5B1DB0D38F00188C4B /* Sources */,
 				57E496241DA3B70A00FEFDAA /* ZRQRCode.bundle */,
 				571936D81D26A966007D5A09 /* AppDelegate.h */,
 				571936D91D26A966007D5A09 /* AppDelegate.m */,
 				9032C6DE1D865AF00067A92D /* ZRMainViewController.h */,
 				9032C6DF1D865AF00067A92D /* ZRMainViewController.m */,
-				577440191D599CB400293E80 /* ZRQRCodeScanView.h */,
-				5774401A1D599CB400293E80 /* ZRQRCodeScanView.m */,
 				90BAF9D41D7FB1CA006278BB /* ZRAlertController.h */,
 				90BAF9D51D7FB1CA006278BB /* ZRAlertController.m */,
-				571936EC1D26A996007D5A09 /* ZRQRCodeViewController.h */,
-				571936ED1D26A996007D5A09 /* ZRQRCodeViewController.m */,
-				9032C6E61D86A1020067A92D /* ZRQRGenerateCode.h */,
-				9032C6E71D86A1020067A92D /* ZRQRGenerateCode.m */,
-				57F8AF661D30F918007D2F52 /* ZRAudio.h */,
-				57F8AF671D30F918007D2F52 /* ZRAudio.m */,
-				57E7D2481D35029A008A6FE2 /* ZRQRCodeController.h */,
 				5716B7901D37816D00731869 /* ZRTmpViewController.h */,
 				5716B7911D37816D00731869 /* ZRTmpViewController.m */,
 				9032C6E11D868D440067A92D /* ZRGeneratedQRCodeViewController.h */,
@@ -233,6 +232,33 @@
 				2DC88EAC207E699444889EC2 /* Pods-ZRQRCodeViewController.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9021AF5B1DB0D38F00188C4B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				571936EC1D26A996007D5A09 /* ZRQRCodeViewController.h */,
+				571936ED1D26A996007D5A09 /* ZRQRCodeViewController.m */,
+				9032C6E61D86A1020067A92D /* ZRQRGenerateCode.h */,
+				9032C6E71D86A1020067A92D /* ZRQRGenerateCode.m */,
+				57F8AF661D30F918007D2F52 /* ZRAudio.h */,
+				57F8AF671D30F918007D2F52 /* ZRAudio.m */,
+				57E7D2481D35029A008A6FE2 /* ZRQRCodeController.h */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		9021AF5C1DB0D39800188C4B /* SampleView */ = {
+			isa = PBXGroup;
+			children = (
+				577440191D599CB400293E80 /* ZRQRCodeScanView.h */,
+				5774401A1D599CB400293E80 /* ZRQRCodeScanView.m */,
+				9021AF531DB08C1600188C4B /* ZRQRCodeScanView2.h */,
+				9021AF541DB08C1600188C4B /* ZRQRCodeScanView2.m */,
+				9021AF581DB0D38100188C4B /* ZRQRCodeScanView3.h */,
+				9021AF591DB0D38100188C4B /* ZRQRCodeScanView3.m */,
+			);
+			name = SampleView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +327,7 @@
 					};
 					57F528A61D29453F00DB8158 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = B873AZ7BS6;
 					};
 				};
 			};
@@ -535,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9021AF551DB08C1600188C4B /* ZRQRCodeScanView2.m in Sources */,
 				9032C6E31D868D440067A92D /* ZRGeneratedQRCodeViewController.m in Sources */,
 				57A8CDF81D3F73A400A3DA5E /* ZRQRCodeViewController.h in Sources */,
 				5774401B1D599CB400293E80 /* ZRQRCodeScanView.m in Sources */,
@@ -544,6 +572,7 @@
 				9032C6E81D86A1020067A92D /* ZRQRGenerateCode.m in Sources */,
 				57F8AF681D30F918007D2F52 /* ZRAudio.m in Sources */,
 				571936EE1D26A996007D5A09 /* ZRQRCodeViewController.m in Sources */,
+				9021AF5A1DB0D38100188C4B /* ZRQRCodeScanView3.m in Sources */,
 				5716B7921D37816D00731869 /* ZRTmpViewController.m in Sources */,
 				9032C6E01D865AF00067A92D /* ZRMainViewController.m in Sources */,
 				571936DA1D26A966007D5A09 /* AppDelegate.m in Sources */,
@@ -721,6 +750,7 @@
 			baseConfigurationReference = 329CD3F334B85A6DB248B909 /* Pods-ZRQRCodeViewController(Demo).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B873AZ7BS6;
 				INFOPLIST_FILE = "ZRQRCodeViewController(Demo)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -734,6 +764,7 @@
 			baseConfigurationReference = 6429C4792C0DA18377D585E5 /* Pods-ZRQRCodeViewController(Demo).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B873AZ7BS6;
 				INFOPLIST_FILE = "ZRQRCodeViewController(Demo)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

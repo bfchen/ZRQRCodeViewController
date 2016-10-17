@@ -14,6 +14,7 @@
 #import "ZRQRCodeViewController.h"
 #import "ZRAlertController.h"
 #import "ZRQRCodeScanView.h"
+#import "ZRQRCodeScanView2.h"
 #import "ZRGeneratedQRCodeViewController.h"
 #import "ZRTmpViewController.h"
 
@@ -55,7 +56,8 @@
                            kHeader : @"2.The method of QRCode scanning by customing UIView",
                            kTag    : @2,
                            kBody   : @[
-                                     @"Scanning QRCode by customing UIView"
+                                     @"Scanning QRCode by customed UIView",
+                                     @"Scanning BarCode or QRCode by customed UIView"
                                      ]
                            }
                        ],
@@ -208,8 +210,11 @@
             
             break;
         case 2:
-            
-             [[[ZRQRCodeScanView alloc] init] openQRCodeScan:self];
+            if ([text isEqualToString:[array2 firstObject]]) {
+                [[[ZRQRCodeScanView alloc] init] openQRCodeScan:self];
+            } else{
+                [[[ZRQRCodeScanView2 alloc] init] openQRCodeScan:self];
+            }
             
             break;
         case 3:

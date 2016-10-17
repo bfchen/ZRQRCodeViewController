@@ -21,7 +21,22 @@ typedef NS_ENUM(NSInteger) {
     ZRQRCodeScanTypeContinuation = 1  // Return a result after scanned ,but does not dismiss current controller
 }ZRQRCodeScanType;
 
+typedef NS_ENUM(NSInteger)
+{
+    ZRScanCodeKindQRCode  = 0 << 1,
+    ZRScanCodeKindBarCode = 1 << 1
+}ZRScanCodeKind;
+
+
+@protocol ZRQRCodeViewDelegate <NSObject>
+
+- (void)navigationBarDidClickedBackButton;
+
+@end
+
 @interface ZRQRCodeViewController : UIViewController
+
+@property (nonatomic, weak) id<ZRQRCodeViewDelegate> qrcodeDelegate;
 
 @property (nonatomic, assign) ZRQRCodeScanType scanType;// Default is ZRQRCodeScanTypeReturn
 
@@ -40,6 +55,8 @@ typedef NS_ENUM(NSInteger) {
 - (instancetype)initWithScanType:(ZRQRCodeScanType)scanType customView:(UIView *)customView navigationBarTitle:(NSString *)title NS_AVAILABLE_IOS(7_0);
 
 @property (nonatomic, copy) NSString *errorMessage;
+
+@property (nonatomic, assign) ZRScanCodeKind scanCodeKind;
 
 /*
  * QR Code Scanning immediately
@@ -111,5 +128,6 @@ typedef NS_ENUM(NSInteger) {
 - (UIImageView *)generateQuickResponseCodeWithFrame:(CGRect)imageRect dataString:(NSString *)dataString centerImage:(UIImage *)image needShadow:(BOOL)shadow NS_AVAILABLE_IOS(7_0);
 
 @end
+
 
 

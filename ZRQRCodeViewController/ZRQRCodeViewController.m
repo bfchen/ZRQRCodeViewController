@@ -471,11 +471,39 @@ typedef NS_ENUM(NSInteger)
         [session addInput:input];
         [session addOutput:output];
         
+        
+        NSArray *metaObjectTypes = nil;
         //Setup QR code encoding format
-        output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode,
-                                       AVMetadataObjectTypeEAN13Code,
-                                       AVMetadataObjectTypeEAN8Code,
-                                       AVMetadataObjectTypeCode128Code];
+        if (self.scanCodeKind & ZRScanCodeKindBarCode) {
+//            NSArray *arrayObjects = output.availableMetadataObjectTypes;
+//            NSMutableArray *tmpmetaObjects = [[NSMutableArray alloc] init];
+//            for (NSString *type in arrayObjects) {
+//                if (![type isEqualToString:AVMetadataObjectTypeQRCode] && ![type isEqualToString:AVMetadataObjectTypeFace]) {
+//                    [tmpmetaObjects addObject:type];
+//                }
+//            }
+//            metaObjectTypes = tmpmetaObjects;
+            metaObjectTypes = @[AVMetadataObjectTypeUPCECode,
+                                AVMetadataObjectTypeCode39Code,
+                                AVMetadataObjectTypeCode39Mod43Code,
+                                AVMetadataObjectTypeEAN13Code,
+                                AVMetadataObjectTypeEAN8Code,
+                                AVMetadataObjectTypeCode93Code,
+                                AVMetadataObjectTypeCode128Code,
+                                AVMetadataObjectTypePDF417Code,
+                                /*AVMetadataObjectTypeAztecCode,
+                                AVMetadataObjectTypeInterleaved2of5Code,
+                                AVMetadataObjectTypeITF14Code,
+                                AVMetadataObjectTypeDataMatrixCode*/];
+            
+            
+        } else {
+            metaObjectTypes =  @[AVMetadataObjectTypeQRCode,
+                                 AVMetadataObjectTypeEAN13Code,
+                                 AVMetadataObjectTypeEAN8Code,
+                                 AVMetadataObjectTypeCode128Code];
+        }
+        output.metadataObjectTypes = metaObjectTypes;
         
         AVCaptureVideoPreviewLayer * layer = [AVCaptureVideoPreviewLayer layerWithSession:session];
         layer.videoGravity = AVLayerVideoGravityResize;
@@ -866,6 +894,33 @@ typedef NS_ENUM(NSInteger)
     if (self.actionBlockHandler) {
         self.actionBlockHandler((int)buttonIndex, [actionSheet buttonTitleAtIndex:buttonIndex]);
     }
+}
+
+@end
+
+
+@implementation UINavigationController(backButtonHandler)
+
+- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item
+{
+    if([self.viewControllers count] < [navigationBar.items count]) {
+        return YES;
+    }
+    
+    UIViewController * topvc = [self topViewController];
+    BOOL needAnimated = YES;
+    if ([topvc isKindOfClass:[ZRQRCodeViewController class]]) {
+        ZRQRCodeViewController* vc = (ZRQRCodeViewController *)topvc;
+        if([vc.customView respondsToSelector:@selector(navigationBarDidClickedBackButton)]) {
+            [vc.qrcodeDelegate navigationBarDidClickedBackButton];
+        }
+        needAnimated = NO;
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self popViewControllerAnimated:needAnimated];
+    });
+
+    return NO;
 }
 
 @end
