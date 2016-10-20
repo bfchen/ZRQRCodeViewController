@@ -31,7 +31,7 @@
 
 - (SystemSoundID)getDictSystemSoundID:(NSString **)soundName
 {
-    if (!*soundName)
+    if (!(*soundName).length)
         *soundName = @"ZR_Scan_Success";
     
     NSDictionary *soundDictionary = [[NSDictionary alloc] init];
@@ -44,7 +44,7 @@
     NSString *soundName = [[NSString alloc] init];
     SystemSoundID soundID = [self getDictSystemSoundID:&soundName];
     if(!soundID){
-        NSString *cafPath = [[NSBundle bundleWithPath:[self.customBundle getBundlePath]] pathForResource:soundName ofType:@".wav"];
+        NSString *cafPath = [[NSBundle bundleWithPath:[self.customBundle getBundlePath]] pathForResource:soundName ofType:@".caf"];
         NSURL *url = [NSURL URLWithString:cafPath];
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)(url), &soundID);
         AudioServicesPlayAlertSound(soundID);
